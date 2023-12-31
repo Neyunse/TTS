@@ -1,5 +1,7 @@
 import os
+import json
 import pickle
+import numpy as np
 from pydub import AudioSegment
 import config
 import traceback
@@ -15,7 +17,7 @@ def reproducir_audio(audio):
 
 def encontrar_audio_por_letra(letra, voice_bank):
     for entry in voice_bank:
-        if letra.lower() in entry["letra"].lower():
+        if letra.lower() == entry["letra"].lower():
             print(letra + "in" + entry["letra"])
             return entry["audio"]
     return None
