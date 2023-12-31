@@ -70,7 +70,9 @@ if __name__ == "__main__":
                 pista_audio = encontrar_audio_por_letra(letra_combinada, voice_bank)
                 if pista_audio is not None and any(pista_audio):
                     # Crear el objeto AudioSegment
-                    audio = AudioSegment(data=pista_audio.tobytes(), sample_width=pista_audio.itemsize, frame_rate=config.voice_frame_rate, channels=1)
+                    audio = AudioSegment(data=pista_audio.tobytes(), 
+                                         sample_width=pista_audio.itemsize, 
+                                         frame_rate=config.voice_frame_rate, channels=1)
                     pistas_audio_palabra.append(audio)
                     reproducir_audio(audio)
                 else:
@@ -79,7 +81,10 @@ if __name__ == "__main__":
                 # Si la palabra tiene un número impar de letras, reproducir la última letra
                 pista_audio = encontrar_audio_por_letra(letra_actual, voice_bank)
                 if pista_audio is not None and any(pista_audio):
-                    audio = AudioSegment(data=pista_audio.tobytes(), sample_width=pista_audio.itemsize, frame_rate=config.voice_frame_rate, channels=1)
+                    audio = AudioSegment(data=pista_audio.tobytes(), 
+                                         sample_width=pista_audio.itemsize, 
+                                         frame_rate=config.voice_frame_rate, 
+                                         channels=1)
                     pistas_audio_palabra.append(audio)
                     reproducir_audio(audio)
                 else:
